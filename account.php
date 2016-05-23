@@ -31,13 +31,14 @@ class User_session {
 
         elseif($this->password == $records['password']):
             session_start();
-            $_SESSION['name'] = $results ['firstname'] . " " . $results['surname'];
-            $_SESSION['email'] = $results['email'];
-            $_SESSION['firstname'] = $results ['firstname'];
-            $_SESSION['surname'] = $results ['surname'];
-            $_SESSION['age'] = $results ['age'];
-            $_SESSION['status'] = $results ['status'];
-
+            $_SESSION['name'] = $records ['firstname'] . " " . $records['surname'];
+            $_SESSION['email'] = $records['email'];
+            $_SESSION['firstname'] = $records ['firstname'];
+            $_SESSION['surname'] = $records ['surname'];
+            $_SESSION['age'] = $records ['age'];
+            $_SESSION['status'] = $records ['status'];
+            unset($this->password);
+            unset($this->email);
             header('Location: http://localhost/Site_2/index.php');
         endif;
 
