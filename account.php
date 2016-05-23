@@ -63,6 +63,9 @@ class Sign_Up{
         $this->setUserDetails($_POST);
     }
 
+    public function GetDetails(){
+
+    }
     public function setUserDetails($userDetails){
 
         $this->firstname = $userDetails['firstname'];
@@ -74,7 +77,6 @@ class Sign_Up{
     }
 
     public function checkDetails(){
-        var_dump($this);
         echo $this->firstname;
     }
 
