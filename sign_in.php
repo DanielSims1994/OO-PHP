@@ -6,7 +6,7 @@
     <title>Daniel Sims</title>
 <?php 
     include("nav_bar.php");
-    include("sign_in_PHP.php"); 
+    include("account.php"); 
     include ("db_connect.php"); 
 ?>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -37,16 +37,15 @@
     if(isset($_POST['submit'])):
         $email = trim($_POST['email']);
         $password = trim($_POST['password']);
-        //echo $password;
+        echo $email;
+        echo $password;
 
         if($email == '' && $password == ''):
             $errMsg .= 'Please fill in both fields.';
         endif;
 
         if($errMsg == ''):
-            $login = new session_start();
-            $login->setPassword($password);
-            $errMsg = $login->login($email);
+            $login = new User_session($email, $password);
         endif;
         echo $errMsg;
     endif;
