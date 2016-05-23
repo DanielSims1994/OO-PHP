@@ -7,7 +7,6 @@
 <?php 
     include("nav_bar.php");
     include("account.php"); 
-    include ("db_connect.php"); 
 ?>
     <link rel="stylesheet" type="text/css" href="style.css">
     </head>

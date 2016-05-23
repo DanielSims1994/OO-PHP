@@ -23,12 +23,23 @@ class User_session {
     public function start_user_session()
     {
         include ("SQL_functions.php");
-        include("db_connect.php");
 
-        $sql_stmt = new Sql_functions();
-        $result = $sql_tmt->all_user_info();
-        var_dump($result);
+        $sql = new Sql_functions();
+        $records = $sql->all_user_info($this->email);
+
+        if (!$records):
+            echo "Sorry something was wrong!";
+        elseif($this->password == $records['password']):
+            echo "you've logged in!";
+
+
+        endif;
+
+
+
     }
+
+
 }   
 ?>
 
