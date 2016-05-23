@@ -1,7 +1,6 @@
 <?php
 class User_session {
 
-
     private $password;
     private $email;
 
@@ -29,10 +28,17 @@ class User_session {
 
         if (!$records):
             echo "Sorry something was wrong!";
+
         elseif($this->password == $records['password']):
-            echo "you've logged in!";
+            session_start();
+            $_SESSION['name'] = $results ['firstname'] . " " . $results['surname'];
+            $_SESSION['email'] = $results['email'];
+            $_SESSION['firstname'] = $results ['firstname'];
+            $_SESSION['surname'] = $results ['surname'];
+            $_SESSION['age'] = $results ['age'];
+            $_SESSION['status'] = $results ['status'];
 
-
+            header('Location: http://localhost/Site_2/index.php');
         endif;
 
 

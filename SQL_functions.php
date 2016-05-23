@@ -13,7 +13,6 @@ class Sql_functions{
         $records->bindParam(':email', $email);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
-
         return $results;
 	}
 }

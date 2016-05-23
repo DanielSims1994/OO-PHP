@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Daniel Sims</title>
 <?php 
+    session_start();
     include("nav_bar.php");
     include("account.php"); 
 ?>

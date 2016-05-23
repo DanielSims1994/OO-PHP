@@ -5,14 +5,14 @@
     <title>Daniel Sims</title>
 <?php 
     include("nav_bar.php");
-    include("index_PHP.php"); 
 ?>
     <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
 
 <?php  
-
+session_start();
+var_dump($_SESSION);
 
 ?>
 
